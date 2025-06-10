@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbq14dke67ayd"]
+
+[ext_resource type="Script" uid="uid://dhj521fs0rfoh" path="res://demo/scene_b.gd" id="1_lmgno"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmgno"]
+bg_color = Color(0.0862745, 0.6, 0.6, 1)
+
+[node name="SceneB" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lmgno")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lmgno")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 151
+text = "Scene B
+"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Go Back"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "To Scene C"

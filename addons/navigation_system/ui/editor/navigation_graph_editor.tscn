@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ckjopnhgdrt"]
+
+[ext_resource type="Script" uid="uid://bi6mt46t4rkfx" path="res://addons/navigation_system/ui/editor/navigation_graph_editor.gd" id="1_1od7r"]
+[ext_resource type="Resource" uid="uid://xc3ju22tdkxs" path="res://addons/navigation_system/demo/test.tres" id="2_nbgpp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1od7r"]
+bg_color = Color(0.205117, 0.205117, 0.205117, 1)
+
+[node name="NavigationHostEditor" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1od7r")
+script = ExtResource("1_1od7r")
+graph = ExtResource("2_nbgpp")

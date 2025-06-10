@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsnj8mhbu1xwl"]
+
+[ext_resource type="Script" uid="uid://bcytw567wywtu" path="res://demo/scene_a.gd" id="1_is185"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is185"]
+bg_color = Color(0.433303, 0.659602, 0.530883, 1)
+
+[node name="SceneA" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_is185")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_is185")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 131
+text = "Scene A
+"
+
+[node name="ButtonB" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Go To B
+"
+
+[node name="ButtonC" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Go To C
+"

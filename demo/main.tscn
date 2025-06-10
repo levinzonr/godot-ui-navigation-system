@@ -1,0 +1,136 @@
+[gd_scene load_steps=27 format=3 uid="uid://bieb70d0jt75w"]
+
+[ext_resource type="Script" uid="uid://xq2htjvvdv7b" path="res://addons/navigation_system/navigation_host.gd" id="1_7a6vi"]
+[ext_resource type="Script" uid="uid://dcy36nm76rp7l" path="res://addons/navigation_system/navigation_entry_data.gd" id="2_au1l0"]
+[ext_resource type="Script" uid="uid://bl1crj46x71fr" path="res://addons/navigation_system/transitions/fade_in_transition.gd" id="3_kbqbn"]
+[ext_resource type="Script" uid="uid://di6o6fx7o5seq" path="res://addons/navigation_system/transitions/fade_out_transition.gd" id="4_iscmt"]
+[ext_resource type="PackedScene" uid="uid://dsnj8mhbu1xwl" path="res://demo/scene_a.tscn" id="5_nr2wj"]
+[ext_resource type="PackedScene" uid="uid://bbq14dke67ayd" path="res://demo/scene_b.tscn" id="6_fdg1k"]
+[ext_resource type="Script" uid="uid://dinwrmlguft3n" path="res://addons/navigation_system/transitions/slide_in_transition.gd" id="6_kbqbn"]
+[ext_resource type="PackedScene" uid="uid://begood3povqoa" path="res://demo/scene_c.tscn" id="7_6g5ly"]
+[ext_resource type="Script" uid="uid://r1fabtdgoeog" path="res://addons/navigation_system/transitions/slide_out_transition.gd" id="7_iscmt"]
+[ext_resource type="Script" uid="uid://bvn7iw0rdqscs" path="res://addons/navigation_system/navigation_graph.gd" id="8_ucu34"]
+
+[sub_resource type="Resource" id="Resource_f8mb2"]
+script = ExtResource("3_kbqbn")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_ykfgg"]
+script = ExtResource("4_iscmt")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_4bnku"]
+script = ExtResource("3_kbqbn")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_dls5p"]
+script = ExtResource("4_iscmt")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_haa2m"]
+script = ExtResource("2_au1l0")
+name = &"scene_a"
+scene = ExtResource("5_nr2wj")
+enter_transition = SubResource("Resource_f8mb2")
+exit_transition = SubResource("Resource_ykfgg")
+pop_enter_transition = SubResource("Resource_4bnku")
+pop_exit_transition = SubResource("Resource_dls5p")
+
+[sub_resource type="Resource" id="Resource_nr2wj"]
+script = ExtResource("6_kbqbn")
+leave_fraction = 0.5
+easing = 0
+transition = 0
+duration = 0.3
+metadata/_custom_type_script = "uid://dinwrmlguft3n"
+
+[sub_resource type="Resource" id="Resource_fdg1k"]
+script = ExtResource("7_iscmt")
+leave_fraction = 0.5
+easing = 0
+transition = 0
+duration = 0.3
+metadata/_custom_type_script = "uid://r1fabtdgoeog"
+
+[sub_resource type="Resource" id="Resource_msmub"]
+script = ExtResource("3_kbqbn")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_3r4ql"]
+script = ExtResource("4_iscmt")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_3qh5v"]
+script = ExtResource("2_au1l0")
+name = &"scene_b"
+scene = ExtResource("6_fdg1k")
+enter_transition = SubResource("Resource_nr2wj")
+exit_transition = SubResource("Resource_fdg1k")
+pop_enter_transition = SubResource("Resource_msmub")
+pop_exit_transition = SubResource("Resource_3r4ql")
+
+[sub_resource type="Resource" id="Resource_0s2t6"]
+script = ExtResource("3_kbqbn")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_vb7w5"]
+script = ExtResource("4_iscmt")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_amid1"]
+script = ExtResource("3_kbqbn")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_5royu"]
+script = ExtResource("4_iscmt")
+easing = 0
+transition = 0
+duration = 0.3
+
+[sub_resource type="Resource" id="Resource_sy6vv"]
+script = ExtResource("2_au1l0")
+name = &"scene_c"
+scene = ExtResource("7_6g5ly")
+enter_transition = SubResource("Resource_0s2t6")
+exit_transition = SubResource("Resource_vb7w5")
+pop_enter_transition = SubResource("Resource_amid1")
+pop_exit_transition = SubResource("Resource_5royu")
+
+[sub_resource type="Resource" id="Resource_02f81"]
+script = ExtResource("8_ucu34")
+start_name = &"scene_a"
+entries = Dictionary[StringName, ExtResource("2_au1l0")]({
+&"scene_a": SubResource("Resource_haa2m"),
+&"scene_b": SubResource("Resource_3qh5v"),
+&"scene_c": SubResource("Resource_sy6vv")
+})
+metadata/_custom_type_script = "uid://bvn7iw0rdqscs"
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7a6vi")
+nav_graph = SubResource("Resource_02f81")
+metadata/_custom_type_script = "uid://xq2htjvvdv7b"
