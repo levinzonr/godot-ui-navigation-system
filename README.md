@@ -32,3 +32,8 @@ Godot GDScript Plugin for managing UI Navigation and Transitions between Control
 NavigationController.push("destination_name") # Pushes a new scene onto the navigation stack
 NavigationController.pop() # Pops the current scene from the navigation stack
 ```
+
+
+
+## License
+This plugin is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
